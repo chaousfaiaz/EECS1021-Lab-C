@@ -11,8 +11,14 @@ public class IterationExercises {
      * @return the sum of all odd integers from the given integer up to 999.
      */
     public static int addOddsUp(int n) {
-        throw new UnsupportedOperationException(); //replace this line!!
-    }
+        int sum = 0;
+for(int i = n; i<=999; i++){
+if(1%2 != 0){
+sum +=i;
+}}
+return sum;
+} //replace this line!!
+    
 
     /**
      * Given a string, replaces each digit in the string with that many occurrences of asterisks
@@ -22,7 +28,18 @@ public class IterationExercises {
      * @return an "asterisked up" string
      */
     public static String asteriskUp(String str) {
-        throw new UnsupportedOperationException(); //replace this line!!
+        StringBuilder result = new StringBuilder();
+char c = str.charAt(i);
+//check if character is a digit
+if(Character.isDigit(c)){
+int count = Character.getNumericValue(c);
+for (intj= 0; j<count; j++){
+result.append('+');
+}
+}else{
+result.append(c);
+}
+return result.toString(); //replace this line!!
     }
 
     /**
@@ -35,7 +52,19 @@ public class IterationExercises {
      * @return	the number of characters in str1 that occur in str2.
      */
     public static int countCharacters(String str1, String str2) {
-        throw new UnsupportedOperationException(); //replace this line!!
+        int count = 0;
+str1 = str1.toLowerCase();
+str2 = str2.toLowerCase(); //replace this line!!
+        //use nested loop to compare each character of str1 with each characters od str2
+for(int i = 0; i<str1.length(); i++){
+char c1 = str1.charAt(i);
+for (int j = 0; j<str2.length(); j++){
+char c2 = str2.charAt(j);
+if(c1 == c2){
+count++;
+break;
+}}}
+return count;
     }
 
     /**
@@ -47,7 +76,11 @@ public class IterationExercises {
      * @return	True if every element of arr1 appears in arr2.
      */
     public static boolean inArrayList(int[] arr1, ArrayList<Integer> arr2) {
-        throw new UnsupportedOperationException(); //replace this line!!
+        for(int num:arr1){
+//check if arr2 contains the current elment from arr1
+if(!arr2.contains(num)){
+return false;
+}} return true;//replace this line!!
     }
 
     /**
@@ -59,8 +92,22 @@ public class IterationExercises {
      * @param str a String
      * @return a hashmap that shows frequency count of characters in the string
      */
+
     public static HashMap<Character, Integer> countOccurences(String str) {
-        throw new UnsupportedOperationException(); //replace this line!!
+      HashMap Character, Integer> counts = new HashMap ();
+// convert the string to lowercase to majke the counting case insensitive.
+str = str.toLowerCase();
+//iterate through each charctr in string
+for(char c: str.toCharArray()){
+//check if character si already in hashmap
+if(counts.containskey(c)){
+//increment the count for the character
+counts.put(c,counts.get(c) +1);
+}else{
+//add th character to hash map with a count of 1
+counts.put(c,1);
+}}
+return counts; //replace this line!!
     }
 
     /**
